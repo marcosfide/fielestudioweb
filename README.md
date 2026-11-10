@@ -20,11 +20,19 @@ npm run preview   # sirve dist/ para probar el build
 - `public/favicon.svg`: ícono de la pestaña.
 - `netlify.toml`: configuración de deploy (build `npm run build`, carpeta `dist`).
 
+## Idiomas (ES / EN)
+
+- El texto en español está escrito en `index.html`.
+- Cada texto traducible tiene un atributo `data-i18n="tN"`; su versión en inglés está en `src/en.js` con la misma clave.
+- Los mensajes de WhatsApp y los textos del armador de consulta, en los dos idiomas, están en `src/main.js` (objeto `COPY`).
+- El idioma inicial sale del navegador del visitante (o de `?lang=en` en la URL) y se recuerda si lo cambia con el botón ES / EN.
+- Si cambiás un texto en español, cambiá también su versión en `src/en.js`.
+
 ## Cambios frecuentes
 
 - **Número de WhatsApp:** está en `src/main.js` (`WHATSAPP`) y en los links `wa.me/5493413145129` de `index.html`.
 - **Color principal:** variable `--accent` al inicio de `src/style.css`.
-- **Precios:** buscar `$300.000`, `$450.000`, `$600.000`, `$25.000` y `$250.000` en `index.html`.
+- **Precio de entrada:** buscar `price-pill` en `index.html` ($300.000 ARS, US$ 200, 175 €).
 
 ## Deploy en Netlify
 
