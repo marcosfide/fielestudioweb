@@ -1,0 +1,48 @@
+:root{--accent:#2E4BFF}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#F3F2EE}
+img{max-width:100%}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+a{color:#111318}a:hover{color:#2E4BFF}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes floatA{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(-6deg) translateY(-10px)}}
+@keyframes floatB{0%,100%{transform:rotate(4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-14px)}}
+@keyframes floatC{0%,100%{transform:rotate(-1deg) translateY(0)}50%{transform:rotate(-1deg) translateY(-8px)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(46,75,255,.45)}50%{box-shadow:0 0 0 8px rgba(46,75,255,0)}}
+.in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.42s}
+.fa{animation:floatA 7s ease-in-out infinite}
+.fb{animation:floatB 8s ease-in-out infinite}
+.fc{animation:floatC 6s ease-in-out infinite}
+.track{animation:marquee 32s linear infinite}
+.dot{animation:pulse 2.4s ease-in-out infinite}
+@supports (animation-timeline: view()){
+.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+}
+.btn{transition:transform .25s ease,background-color .25s ease,color .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{transition:transform .25s ease}
+.btn:hover svg{transform:translateX(4px)}
+.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 50px -24px rgba(17,19,24,.35)}
+.shot{overflow:hidden}
+.shot img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.work:hover .shot img{transform:scale(1.045)}
+.lnk{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0% 1.5px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s ease}
+.lnk:hover{background-size:100% 1.5px}
+@keyframes fabIn{from{opacity:0;transform:translateY(20px) scale(.8)}to{opacity:1;transform:none}}
+.wa-fab{animation:fabIn .6s cubic-bezier(.2,.7,.2,1) .9s both;transition:transform .25s ease,box-shadow .25s ease}
+.wa-fab:hover{transform:scale(1.07);box-shadow:0 18px 36px -10px rgba(37,211,102,.6)}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+
+/* Celular: el encabezado queda en una sola fila */
+@media (max-width:640px){.nav-txt{display:none}}
+
+/* Armador de consulta */
+.chip{font-family:inherit;font-size:15px;font-weight:500;min-height:44px;padding:10px 18px;border-radius:999px;border:1.5px solid #4A4D57;background:transparent;color:#F3F2EE;cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.chip:hover{border-color:#D6F35B}
+.chip[aria-pressed="true"]{background:#D6F35B;border-color:#D6F35B;color:#111318;font-weight:600}
+.chip:focus-visible,#negocio:focus-visible{outline:2px solid #D6F35B;outline-offset:3px}
+#negocio::placeholder{color:#8A8D96}
